@@ -10,10 +10,22 @@ abstract class UserViewModel extends State<User> {
 
   UserModel userModel;
 
+  List<UserModel> userList = [];
+
+  Future getUserList() async {
+    userList = await userDatabaseProvider.getList();
+    setState(() {});
+  }
+
   @override
   void initState() {
     super.initState();
     userDatabaseProvider = UserDatabaseProvider();
     userDatabaseProvider.open();
+  }
+
+  Future<void> saveModel() async {
+    final result = await userDatabaseProvider.insertItem(userModel);
+    print(result);
   }
 }

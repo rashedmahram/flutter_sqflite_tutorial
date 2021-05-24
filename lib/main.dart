@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqflite_tutorial/view/user_list/user.dart';
+import 'package:flutter_sqflite_tutorial/view/user_list/user_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,15 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      theme: ThemeData(
-        primaryColor: Colors.black,
-        scaffoldBackgroundColor: Colors.blueGrey.shade900,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-      ),
-      home: User(),
+      home: UserList(),
     );
   }
 }

@@ -1,28 +1,24 @@
 class UserModel {
   int id;
-  String user;
+  String userName;
   int age;
-  bool isMarried;
+  bool isMarid;
 
-  UserModel({this.id, this.user, this.age, this.isMarried});
+  UserModel({this.id, this.userName, this.age, this.isMarid});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    user = json['user'];
+    userName = json['userName'];
     age = json['age'];
-    isMarried = json['isMarried'] == 1;
+    isMarid = json['isMarid'] is int;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['user'] = this.user;
+    data['userName'] = this.userName;
     data['age'] = this.age;
-    data['isMarried'] = this.isMarried == true ? 1 : 0;
-
-    if (id != null) {
-      data['id'] = this.id;
-    }
+    data['isMarid'] = this.isMarid;
     return data;
   }
 }
