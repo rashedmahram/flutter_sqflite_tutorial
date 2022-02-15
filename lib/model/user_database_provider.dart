@@ -53,7 +53,7 @@ class UserProvider {
     database.close();
   }
 
-// input as user model
+
   Future<bool> insertUser(UserModel user) async {
     if (database != null) open();
     final userMap = await database.insert(userDatabaseTbName, user.toJson());
